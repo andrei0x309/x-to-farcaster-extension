@@ -4,9 +4,10 @@ This extension allows you to easily quote posts from X to warpcast.com.
 It will place a button besides bookmark and share buttons on each post.
 When you click on it, it will open a new tab with the post quoted on warpcast.com.
  
-<!-- ## Download from Chrome-Store:
-Link
-[]() -->
+## Download from Chrome-Store:
+
+Link:
+[https://chromewebstore.google.com/detail/x-qoute-to-warpcast/kbmbcgkddnacmmaciaaanlmejecinkde?authuser=0&hl=en](https://chromewebstore.google.com/detail/x-qoute-to-warpcast/kbmbcgkddnacmmaciaaanlmejecinkde?authuser=0&hl=en)
 
 ### Screenshot
 
