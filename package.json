@@ -2,7 +2,7 @@
   "name": "x-quote-to-warpcast",
   "description": "This extension helps you quote X posts on warpcast by providing a button to all posts on X.",
   "private": true,
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "scripts": {
     "inject": "tsc --downlevelIteration --outFile src/client/inject.js src/client/inject.ts",
