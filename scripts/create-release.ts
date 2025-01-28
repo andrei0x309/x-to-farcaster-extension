@@ -47,7 +47,6 @@ export const getLastChangeLog = async () => {
     return '';
   }
   const mainChainLog = await readFirst2000Characters(mainChainLogPath)
-  console.log('mainChainLog', limitedSplit(mainChainLog, '##', 2))
   const manifestVersions = limitedSplit(mainChainLog, '##', 2)[1]
   const changesText = '##' + manifestVersions
   return changesText
