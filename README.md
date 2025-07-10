@@ -1,4 +1,6 @@
-## X quote to warpcast (browser extension)
+# X quote to warpcast (browser extension)
+
+> This repo is deprecated in favor of the new repo: [x-to-farcaster-extension](https://github.com/andrei0x309/x-to-farcaster-extension)
 
 This extension allows you to easily quote posts from X to warpcast.com.
 It will place a button besides bookmark and share buttons on each post.
@@ -6,8 +8,9 @@ When you click on it, it will open a new tab with the post quoted on warpcast.co
  
 ## Download from Chrome-Store:
 
-Link:
+Link (points to thew new farcaster extension):
 [https://chromewebstore.google.com/detail/x-qoute-to-warpcast/kbmbcgkddnacmmaciaaanlmejecinkde?authuser=0&hl=en](https://chromewebstore.google.com/detail/x-qoute-to-warpcast/kbmbcgkddnacmmaciaaanlmejecinkde?authuser=0&hl=en)
+
 
 ### Screenshot
 
