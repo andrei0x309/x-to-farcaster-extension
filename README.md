@@ -1,10 +1,12 @@
-# X quote to warpcast (browser extension)
+# X quote to farcaster (browser extension)
 
 > This repo is deprecated in favor of the new repo: [x-to-farcaster-extension](https://github.com/andrei0x309/x-to-farcaster-extension)
 
-This extension allows you to easily quote posts from X to warpcast.com.
+This extension allows you to easily quote posts from X to Farcaster, through fosscaster.xyz(open source UI) or farcaster.xyz (official APP UI for Farcaster).
+
 It will place a button besides bookmark and share buttons on each post.
-When you click on it, it will open a new tab with the post quoted on warpcast.com.
+
+When you click on it, it will open a new tab with the post your qoute. Y
  
 ## Download from Chrome-Store:
 

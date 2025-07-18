@@ -2,6 +2,7 @@ import type { Tab, T_DEFAULT_OPTIONS } from '../types';
 
 export const DEFAULT_OPTIONS = {
   theme: 'dark',
+  client: 'fosscaster',
 } as T_DEFAULT_OPTIONS;
 
 
@@ -35,7 +36,7 @@ export const getOptions = async () => {
 
 export const setDefaultOptions = async () => {
   const options = await getOptions();
-  if (options?.activeProxy?.type) {
+  if (options?.theme) {
     return;
   }
   await setOptions(DEFAULT_OPTIONS);

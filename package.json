@@ -1,6 +1,6 @@
 {
-  "name": "x-quote-to-warpcast",
-  "description": "This extension helps you quote X posts on warpcast by providing a button to all posts on X.",
+  "name": "x-quote-to-farcaster",
+  "description": "This extension helps you quote X posts on farcaster by providing a button to all posts on X.",
   "private": true,
   "version": "1.0.3",
   "type": "module",
@@ -19,7 +19,7 @@
     "pub": "bun run build && bun run release && bun run ./scripts/create-release.ts",
     "only-pub": "bun run build && bun run ./scripts/create-release.ts"
   },
-  "devDependencies": {
+"devDependencies": {
     "@types/archiver": "^6.0.3",
     "@crxjs/vite-plugin": "^2.0.0-beta.23",
     "@sveltejs/vite-plugin-svelte": "^3.0.2",

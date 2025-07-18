@@ -1,4 +1,5 @@
-  
+import { getOptions } from '../lib/utils';
+
 (() =>{
     try { 
         const container = document.documentElement;
@@ -19,7 +20,17 @@ const allowedEvents = ['']
       if (event.source != window)
           return;
         if(allowedEvents.includes(event?.data?.type ?? '')){
-            chrome.runtime.sendMessage(event.data)
+            if(event?.data?.type === 'getClient'){
+
+              getOptions().then((options) => {
+
+                const client = options?.client || 'fosscaster'
+                window.postMessage({
+                    type: 'client',
+                    client: client
+                }, "*")
+            }) 
+          }
         }
   })
   
