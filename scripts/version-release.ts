@@ -33,7 +33,7 @@ async function main() {
 
   // 3. Commit changes
   execSync(`git add .`);
-  execSync(`git commit -m "x-to-warpcast@v${nextVersion}"`);
+  execSync(`git commit -m "x-to-farcaster@v${nextVersion}"`);
 
   // 4. Create and push tag
   execSync(`git tag v${nextVersion}`);

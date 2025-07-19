@@ -7,7 +7,7 @@ const secrets = args[0]
 const event = args[1]
 const action = args[2]
 // const changeLogUrl = 'https://clear-wallet.flashsoft.eu/docs/automated-changelog/'
-const repoUrl = 'https://github.com/andrei0x309/x-to-warpcast-extension'
+const repoUrl = 'https://github.com/andrei0x309/x-to-farcaster-extension'
 
 type TGithubEvent = {
     inputs: {
@@ -97,7 +97,7 @@ const main = async () => {
     } else if (action === 'push') {
         if (ENABLED && !GithubEvent.forced && GithubEvent?.head_commit?.message.includes('chore:') && !GithubEvent?.head_commit?.message.includes('!')) {
             const commiter = GithubEvent?.head_commit?.author.username || GithubEvent?.head_commit?.committer?.username || ''
-            const message = `X to Warpcast repo commit!\n
+            const message = `X to Farcaster repo commit!\n
 - Repo: ${repoUrl} \n
 - Commit: ${GithubEvent.head_commit.url} \n
 ${commiter ? `- Commiter: @${commiter}` : ''}

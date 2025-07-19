@@ -1,9 +1,22 @@
 <script lang="ts">
-    export let isActive = false;
+  import { onMount } from 'svelte';
+  import { getOptions, setOptions } from '@/lib/utils';
+  interface Props {
+    isActive?: boolean;
+  }
 
-    const navigdateTo = (url: string) => {
+  let { isActive = false }: Props = $props();
+  
+  let client = $state('fosscaster')
+
+  const navigdateTo = (url: string) => {
         chrome.tabs.create({ url });
-    }
+  }
+
+  onMount(async () => {
+    const options = await getOptions();
+    client = options.client;
+  });
 
 </script>
 
@@ -15,19 +28,15 @@
     <input
       type="radio"
       id="value-1"
-      checked=""
+      checked={client === 'fosscaster'}
       name="value-radio"
-      value="value-1"
+      value="fosscaster"
     />
-    <p class="text">Designer</p>
+    <p class="text">fosscaster.xyz</p>
   </label>
   <label class="label">
-    <input type="radio" id="value-2" name="value-radio" value="value-2" />
-    <p class="text">Student</p>
-  </label>
-  <label class="label">
-    <input type="radio" id="value-3" name="value-radio" value="value-3" />
-    <p class="text">Teacher</p>
+    <input type="radio" id="value-2" name="value-radio" value="farcaster" checked={client === 'farcaster'} />
+    <p class="text">farcaster.xyz</p>
   </label>
 </div>
 
