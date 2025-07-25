@@ -1,6 +1,7 @@
-const pFs = import('fs')
-const pCps = import('child_process')
+import { filePipes, dirPipes } from './constants';
 
+const pFs = import('fs');
+const pCps = import('child_process');
 
 async function readFirst2000Characters(filePath: string): Promise<string> {
 
@@ -53,7 +54,6 @@ export const getLastChangeLog = async () => {
 }
 
 
-
 async function ghRelease (isRebuild: boolean) {
   const fs = (await pFs).default
 
@@ -65,9 +65,6 @@ async function ghRelease (isRebuild: boolean) {
 
   const archiver = (await import('archiver')).default
   const archive = archiver('zip', { zlib: { level: 9 } });
-  const dirPipes = ['dist'];
-
-  const filePipes = ['LICENSE', 'README.md', 'PRIVACY_POLICY.md'];
   const outputPath = `releases/${pkg.version}.zip`;
   const outputZip = fs.createWriteStream(outputPath);
 
