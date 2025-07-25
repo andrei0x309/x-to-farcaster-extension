@@ -1,6 +1,7 @@
 <script lang="ts">
   import MainTab from "./main-tab.svelte";
   import AboutTab from "./about-tab.svelte";
+  import OptionsTab from "./options-tab.svelte";
   import { getOptions, setOptions } from '@/lib/utils'
   
  
@@ -33,7 +34,7 @@
 
 </script>
  
-<div class="mainbody" style="min-width: 100%">
+<div class="mainbody w-full">
   <input title="theme-switch" type="checkbox" id="themeSwitch" name="theme-switch" class="theme-switch__input" onchange={themeToggle} checked={isDarkTheme} />
 	<label for="themeSwitch" class="theme-switch__label">
 		<span></span>
@@ -42,10 +43,12 @@
     <section class="row">
       <ul class="nav nav-tabs">
         <li class="{`${activeTab === 'main' ? 'active': ''}`}"><a onclick={() => setTab('main')}  href="#tab-1">Main</a></li>
-        <li class="{`${activeTab === 'about' ? 'active': ''}`}"><a onclick={() => setTab('about')}  href="#tab-2">About</a></li>
+        <li class="{`${activeTab === 'options' ? 'active': ''}`}"><a onclick={() => setTab('options')}  href="#tab-2">Options</a></li>
+        <li class="{`${activeTab === 'about' ? 'active': ''}`}"><a onclick={() => setTab('about')}  href="#tab-3">About</a></li>
       </ul>
-      <div class="tab-content">
+      <div class="tab-content p-4">
         <MainTab isActive={activeTab === 'main'} />
+        <OptionsTab isActive={activeTab === 'options'} />
         <AboutTab isActive={activeTab === 'about'} />
 
       </div>

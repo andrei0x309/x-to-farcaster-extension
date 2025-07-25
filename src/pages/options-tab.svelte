@@ -1,6 +1,8 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { getOptions, setOptions } from '@/lib/utils';
+  import { getChromeUrl } from '@/lib/chrome-misc';
+  import { on } from 'svelte/events';
   interface Props {
     isActive?: boolean;
   }
@@ -9,10 +11,13 @@
   
   let client = $state('fosscaster')
 
-  const navigdateTo = (url: string) => {
-        chrome.tabs.create({ url });
-  }
-
+  const handleChange = async (client: string) => {
+    const options = await getOptions();
+    options.client = client;
+    await setOptions(options);
+  };
+    
+ 
   onMount(async () => {
     const options = await getOptions();
     client = options.client;
@@ -22,9 +27,9 @@
 
 
 <div id="tab-2" class="{`tab-pane ${isActive ? 'active' : ''}`} dark:text-gray-100 text-gray-800" style="font-size: 1rem; text-align: left;">
-    <h2 class="-mb-1 text-lg font-semibold text-gray-900 dark:text-white text-[1.05rem]">Farcaster Client</h2>
+    <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white text-[1.05rem] text-center">Farcaster Client</h2>
     <div class="radio-input">
-  <label class="label">
+  <label class="label" onclick={() => handleChange('fosscaster')} aria-hidden="true">
     <input
       type="radio"
       id="value-1"
@@ -33,10 +38,12 @@
       value="fosscaster"
     />
     <p class="text">fosscaster.xyz</p>
+    <img src={getChromeUrl('/clients/fosscaster.svg')} alt="fosscaster.xyz" class="w-8 h-8" style="margin-left: auto;" />
   </label>
-  <label class="label">
-    <input type="radio" id="value-2" name="value-radio" value="farcaster" checked={client === 'farcaster'} />
+  <label class="label" onclick={() => handleChange('farcaster')} aria-hidden="true">
+    <input type="radio" id="value-2" name="value-radio" value="farcaster"  checked={client === 'farcaster'} />
     <p class="text">farcaster.xyz</p>
+    <img src={getChromeUrl('/clients/farcaster.svg')} alt="farcaster.xyz" class="w-8 h-8" style="margin-left: auto;" />
   </label>
 </div>
 
@@ -61,7 +68,7 @@
   align-items: center;
   gap: 15px;
   padding: 0px 20px;
-  width: 220px;
+  width: 260px;
   cursor: pointer;
   height: 50px;
   position: relative;
@@ -73,7 +80,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 220px;
+  width: 260px;
   height: 45px;
   z-index: -1;
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -82,12 +89,12 @@
 }
 .radio-input label:hover::before {
   transition: all 0.2s ease;
-  background-color: #2a2e3c;
+  background-color: #352a3c;
 }
 
 .radio-input .label:has(input:checked)::before {
-  background-color: #2d3750;
-  border-color: #435dd8;
+  background-color: #482d50;
+  border-color: #a143d8;
   height: 50px;
 }
 .radio-input .label .text {
@@ -95,7 +102,7 @@
 }
 
 .radio-input .label input[type="radio"] {
-  background-color: #202030;
+  background-color: #2e2030;
   appearance: none;
   width: 17px;
   height: 17px;
@@ -105,7 +112,7 @@
   align-items: center;
 }
 .radio-input .label input[type="radio"]:checked {
-  background-color: #435dd8;
+  background-color: #9c43d8;
   -webkit-animation: puls 0.7s forwards;
   animation: pulse 0.7s forwards;
 }

@@ -30,11 +30,20 @@
       "run_at": "document_start",
       "js": ["/src/client/inject.js"],
       "world": "MAIN"
+    },
+        {
+      "matches": [
+        "https://x.com/*"
+      ],
+      "all_frames": true,
+      "run_at": "document_start",
+      "js": ["/src/client/content.js"]
     }
   ],
   "web_accessible_resources": [{
     "resources": [
-        "src/client/inject.js"
+        "src/client/inject.js",
+        "src/client/content.js"
     ],
     "matches": [ "https://x.com/*"]
   }],
