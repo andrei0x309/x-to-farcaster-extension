@@ -64,6 +64,7 @@
 	position: absolute;
   right: 30px;
   top: 10px;
+  cursor: pointer;
 }
 
 .theme-switch__input {
