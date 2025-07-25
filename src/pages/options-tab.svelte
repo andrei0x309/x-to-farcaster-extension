@@ -37,12 +37,12 @@
       name="value-radio"
       value="fosscaster"
     />
-    <p class="text">fosscaster.xyz</p>
+    <p class="text text-[#2e2030] dark:text-white">fosscaster.xyz</p>
     <img src={getChromeUrl('/clients/fosscaster.svg')} alt="fosscaster.xyz" class="w-8 h-8" style="margin-left: auto;" />
   </label>
   <label class="label" onclick={() => handleChange('farcaster')} aria-hidden="true">
     <input type="radio" id="value-2" name="value-radio" value="farcaster"  checked={client === 'farcaster'} />
-    <p class="text">farcaster.xyz</p>
+    <p class="text text-[#2e2030] dark:text-white">farcaster.xyz</p>
     <img src={getChromeUrl('/clients/farcaster.svg')} alt="farcaster.xyz" class="w-8 h-8" style="margin-left: auto;" />
   </label>
 </div>
@@ -92,15 +92,20 @@
   background-color: #352a3c;
 }
 
+.radio-input label:hover .text {
+  transition: all 0.2s ease;
+  color: #fff;
+}
+
+.radio-input .label:has(input:checked) .text {
+    color: #fff;
+}
+
 .radio-input .label:has(input:checked)::before {
   background-color: #482d50;
   border-color: #a143d8;
   height: 50px;
 }
-.radio-input .label .text {
-  color: #fff;
-}
-
 .radio-input .label input[type="radio"] {
   background-color: #2e2030;
   appearance: none;
