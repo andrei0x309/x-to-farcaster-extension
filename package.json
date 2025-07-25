@@ -2,7 +2,7 @@
   "name": "x-quote-to-farcaster",
   "description": "This extension helps you quote X posts on farcaster by providing a button to all posts on X.",
   "private": true,
-  "version": "1.0.3",
+  "version": "1.0.4",
   "type": "module",
   "scripts": {
     "inject": "bun build src/client/inject.ts --minify --target=browser --format iife --outdir src/client/",
