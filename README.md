@@ -9,7 +9,7 @@ When you click on it, it will open a new tab with the post and your quote.
 ## Download from Chrome-Store:
 
 Link (points to thew new farcaster extension):
-[https://chromewebstore.google.com/detail/x-qoute-to-warpcast/kbmbcgkddnacmmaciaaanlmejecinkde?authuser=0&hl=en](https://chromewebstore.google.com/detail/x-qoute-to-warpcast/kbmbcgkddnacmmaciaaanlmejecinkde?authuser=0&hl=en)
+[https://chromewebstore.google.com/detail/x-quote-to-farcaster/kbmbcgkddnacmmaciaaanlmejecinkde?authuser=0&hl=en](https://chromewebstore.google.com/detail/x-quote-to-farcaster/kbmbcgkddnacmmaciaaanlmejecinkde?authuser=0&hl=en)
 
 
 ### Screenshot
